@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Exemplo } from './Exemplo';
+import { ComponentePai } from "./Components/CompentePai";
+import { IndiretoPai } from "./Components/IndiretoPai";
 
-function App() {
+export const App = () => {
+
+  const [nome, setNome] = useState()
+
+  const handleClick = () => {
+    if (nome === 'Fulano') {
+      setNome("")
+    } else {
+      setNome("Fulano")
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <IndiretoPai />
+      {/* <ComponentePai /> */}
+      {/* <h1>Boa noite,{nome}</h1>
+      <button onClick={handleClick}> Clique aqui</button>
+      <Exemplo /> */}
+    </>
+  )
 }
-
-export default App;
