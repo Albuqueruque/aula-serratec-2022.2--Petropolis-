@@ -1,27 +1,21 @@
 import React, { useState } from "react";
-import { Exemplo } from './Exemplo';
-import { ComponentePai } from "./Components/CompentePai";
-import { IndiretoPai } from "./Components/IndiretoPai";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { Home } from "./Pages/Home"
+import { About } from "./Pages/About"
+import { NotFound } from "./Pages/NotFound";
 
 export const App = () => {
 
-  const [nome, setNome] = useState()
-
-  const handleClick = () => {
-    if (nome === 'Fulano') {
-      setNome("")
-    } else {
-      setNome("Fulano")
-    }
-  }
 
   return (
-    <>
-      <IndiretoPai />
-      {/* <ComponentePai /> */}
-      {/* <h1>Boa noite,{nome}</h1>
-      <button onClick={handleClick}> Clique aqui</button>
-      <Exemplo /> */}
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/quemsomos/:nome" element={<About />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
