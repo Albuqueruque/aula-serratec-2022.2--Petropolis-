@@ -15,3 +15,15 @@ export const Button = styled.button`
         color: #FFF;
     }
 `
+
+export const Container = styled.div`
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background: #0f0;
+`
+
+export const InfoUsuario = styled.div`
+    background: #f0f;
+    color: #fff;
+`
