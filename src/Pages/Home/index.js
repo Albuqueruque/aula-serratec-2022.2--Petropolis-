@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom"
+import { DataContext } from "../../Context/data";
 
 import { Button } from "../About/style";
 
 export const Home = () => {
 
-    const [usuario, setUsuario] = useState({
-        nome: "Matheus",
-        idade: 23
-    })
+    const { dados, handleSetNome } = useContext(DataContext)
+
+
 
     return (
         <>
             <h1> Tela home</h1>
-            <Link to={`/quemsomos/${usuario.nome}`}>
+            Nome:
+            <input type="text" placeholder="Digite seu nome" value={dados.nome || ''} onChange={((e) => handleSetNome(e))} />
+            <Link to={`/quemsomos/${dados.nome}`}>
                 <Button cor="red">Ir para pagina quem somos</Button>
             </Link>
         </>

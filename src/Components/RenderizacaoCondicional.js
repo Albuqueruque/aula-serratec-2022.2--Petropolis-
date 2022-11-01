@@ -13,7 +13,7 @@ export const RenderizacaoCondicional = () => {
     }
 
     function logar() {
-        if (isLogado == false) {
+        if (isLogado === false) {
             setIsLogado(true)
         } else {
             setIsLogado(false)
